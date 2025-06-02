@@ -4,8 +4,8 @@ from pantallas.game.main import PantallaJuego
 
 class StartMenu(PantallaBase):
   def __init__(self):
-    self.texto1 = "Mario Broster"
-    self.boton_iniciar = pygame.Rect(100, 100, 200, 50)
+    self.texto1 = "Mario Broster" # Creamos una interfaz básica
+    self.boton_iniciar = pygame.Rect(100, 100, 200, 50) # El boton para iniciar el juego
 
   def manejar_eventos(self, eventos):
     for evento in eventos:
