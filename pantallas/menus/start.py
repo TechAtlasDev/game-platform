@@ -1,6 +1,6 @@
 import pygame
 from ..base import PantallaBase
-from pantallas.game.main import PantallaJuego
+from pantallas.escenario.main import PantallaJuego
 
 class StartMenu(PantallaBase):
   def __init__(self):

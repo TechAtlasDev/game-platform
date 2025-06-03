@@ -12,3 +12,6 @@ class Loop:
       if evento.type == pygame.QUIT:
         self.running = False
     return eventos
+
+bucle1=Loop()
+bucle2=Loop()
