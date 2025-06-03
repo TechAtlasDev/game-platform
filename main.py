@@ -1,3 +1,3 @@
-from core.main import run_game
+from core.runner import run_game
 
 run_game()
