@@ -1,6 +1,5 @@
 from pantallas.escenario.main import Escenario 
-from loop import bucle1,buble2 
-from personaje import Personaje 
+from core.loop import bucle1,bucle2 
 import pygame 
  
 class Pantallas_principal: 
@@ -14,4 +13,3 @@ class Pantallas_principal:
     def pasar_ventana(self): 
         bucle1.correr=False 
         bucle2.correr=True 
-        |

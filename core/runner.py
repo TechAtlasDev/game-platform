@@ -1,5 +1,6 @@
 from core.game import Game
 from utils.config import config
+from core.loop import bucle1
 
 from pantallas.menus.start import StartMenu
 
