@@ -1,3 +1,5 @@
+# Comentario 2
+
 from core.game import Game
 from utils.config import config
 

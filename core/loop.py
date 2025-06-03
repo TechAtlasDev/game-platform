@@ -1,3 +1,5 @@
+# Este es un comentario de prueba
+
 import pygame
 
 class Loop:
