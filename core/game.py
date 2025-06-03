@@ -4,10 +4,10 @@ from utils.config import Config
 from .loop import Loop
 
 class Game:
-  def __init__(self, title:str, config:Config,loop:Loop): #agregue que se le pueda agregar u
+  def __init__(self, title:str, config:Config):
     self.title = title
     self.config = config
-    self.loop =loop
+    self.loop = Loop()
     self.ventana = pygame.display.set_mode((config.width, config.height))
 
   def run(self, pantalla:StartMenu):

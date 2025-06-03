@@ -2,7 +2,7 @@ import pygame
 
 class Loop:
   def __init__(self):
-    self.running = False
+    self.running = True
   
   def enlistar_eventos(self):
     eventos = pygame.event.get()
