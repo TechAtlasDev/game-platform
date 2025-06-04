@@ -15,12 +15,7 @@ class Game:
     while self.loop.running:
       eventos = self.loop.enlistar_eventos()
       pantalla.manejar_eventos(eventos)
-<<<<<<< HEAD
       pantalla.run(eventos)
  
 
  
-=======
-      pantalla.run(self.ventana)
-      pygame.display.update()
->>>>>>> 01e47d805f6ea885a5087c11047d382abb5ea62d
