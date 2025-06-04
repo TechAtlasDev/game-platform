@@ -1,6 +1,5 @@
 from pygame.surface import Surface
 from utils.evento import Evento
-import pygame
 
 class StartMenu:
     def __init__(self):
@@ -9,9 +8,10 @@ class StartMenu:
         for evento in eventos:
             if evento.tipo == "click":
                 coordenadas = evento.coordenadas
-            elif evento.tipo == "tecla":
+                print (f"Click en coordenadas: {coordenadas}")
+            if evento.tipo == "tecla":
                 if evento == "q":
-                    pass
+                    print ("Tecla 'q' presionada, saliendo del menú de inicio.")
 
 
     def rellenar_pantalla(self, ventana:Surface):
