@@ -1,3 +1,4 @@
+# Este es un comentario
 import pygame
 from utils.evento import Evento
 
