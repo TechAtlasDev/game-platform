@@ -15,3 +15,6 @@ class Game:
       eventos = self.loop.enlistar_eventos()
       pantalla.manejar_eventos(eventos)
       pantalla.run(eventos)
+ 
+
+ 
