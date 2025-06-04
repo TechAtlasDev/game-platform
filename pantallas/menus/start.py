@@ -1,19 +1,20 @@
-import pygame
-from ..base import PantallaBase
-from pantallas.game.main import PantallaJuego
+from pygame.surface import Surface
+from utils.evento import Evento
 
-class StartMenu(PantallaBase):
-  def __init__(self):
-    self.texto1 = "Mario Broster" # Creamos una interfaz básica
-    self.boton_iniciar = pygame.Rect(100, 100, 200, 50) # El boton para iniciar el juego
+class StartMenu:
+    def __init__(self):
+        pass
+        
+    def manejar_eventos(self, eventos:list[Evento]):
+        for evento in eventos:
+            if evento.tipo == "click":
+                coordenadas = evento.coordenadas
+                print (f"Click en coordenadas: {coordenadas}")
 
-  def manejar_eventos(self, eventos):
-    for evento in eventos:
+    def rellenar_pantalla(self, ventana:Surface):
+        ventana.fill((100, 255, 100))
 
-      # == CONTROLAR EVENTOS DE TIPO CLICK ==
-      if evento.type == pygame.click:
-        # == Si el click fue en el boton de iniciar ==
-        if self.boton_iniciar.collidepoint(evento.posicion):
-          # == Iniciar el juego ==
-          pantalla_juego = PantallaJuego()
-          pantalla_juego.run()
+    def run(self,ventana:Surface):
+        self.rellenar_pantalla(ventana)
+
+

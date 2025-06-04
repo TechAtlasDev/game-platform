@@ -6,3 +6,4 @@ class PantallaBase:
     raise NotImplementedError("This method should be overridden by subclasses")
   #si
   #droga por droga es droga al cuadrado
+  #giovanny es si
