@@ -5,7 +5,7 @@ from pantallas.componentes.boton import Boton
 from pantallas.base import PantallaBase
 
 def ejecutar_escena_1():
-    print ("Ejecutando escenario 1")
+    print ("Ejecutando escena 1...")
 
 class StartMenu(PantallaBase):
     def __init__(self):
