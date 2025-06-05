@@ -19,3 +19,6 @@ class Boton:
     text = self.fuente_texto.render(self.texto, True, (0, 0, 0))
     pantalla.blit(text, (self.posicion[0] + (self.ancho - text.get_width()) // 2, 
                self.posicion[1] + (self.alto - text.get_height()) // 2))
+    
+  def al_presionar(self, funcion):
+    funcion()

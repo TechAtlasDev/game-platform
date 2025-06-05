@@ -2,9 +2,9 @@ from pygame.surface import Surface
 from utils.evento import Evento
 from pantallas.componentes.boton import Boton
 
-# Este es un comentario
+from pantallas.base import PantallaBase
 
-class StartMenu:
+class StartMenu(PantallaBase):
     def __init__(self):
         self.boton = Boton("Jugar", (100, 100), 200, 50)
         
