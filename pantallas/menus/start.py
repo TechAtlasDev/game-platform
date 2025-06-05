@@ -2,14 +2,12 @@ from pygame.surface import Surface
 from utils.evento import Evento
 from pantallas.componentes.boton import Boton
 
-from pantallas.base import PantallaBase
-
 def ejecutar_escena_1():
     print ("Ejecutando escena 1...")
 
-class StartMenu(PantallaBase):
+class StartMenu:
     def __init__(self):
-        self.boton = Boton("Jugar", (100, 100), 200, 50)
+        self.boton = Boton(texto="Jugar", posicion=(100, 100), ancho=200, alto=50)
         
     def manejar_eventos(self, eventos:list[Evento]):
         for evento in eventos:

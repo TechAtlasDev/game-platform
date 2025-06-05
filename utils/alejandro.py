@@ -1,2 +1,0 @@
-def alejandro():
-  pass
