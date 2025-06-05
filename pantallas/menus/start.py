@@ -12,7 +12,8 @@ class StartMenu:
                 print (f"Click en coordenadas: {coordenadas}")
 
     def rellenar_pantalla(self, ventana:Surface):
-        ventana.fill((100, 255, 100))
+        print ("Rellenando pantalla")
+        ventana.fill((100, 250, 100))
 
     def run(self,ventana:Surface):
         self.rellenar_pantalla(ventana)

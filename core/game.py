@@ -16,3 +16,4 @@ class Game:
       eventos = self.loop.enlistar_eventos()
       pantalla.manejar_eventos(eventos)
       pantalla.run(self.ventana)
+      pygame.display.update()
