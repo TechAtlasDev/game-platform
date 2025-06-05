@@ -1,5 +1,5 @@
 #Creando Figura
-import pygame,sys 
+import pygame,sys #asd
 pygame.init()
 tamaño=(800,600)
 negro=(0, 0, 0)
