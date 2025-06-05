@@ -21,7 +21,4 @@ class Personaje:
             print(f"{self.nombre} Elimino al villano.")
         else:
             print(f"El {self.enemigo} esquivo el ataque de {self.nombre}")
-mario_bross = Personaje("mario bros" ,0 [0,0])
-mario_bross.mostrar_habilidades()
-mario_bross.Salud_actual()
-mario_bross.
+ 
