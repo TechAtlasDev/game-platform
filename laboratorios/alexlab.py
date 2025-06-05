@@ -15,7 +15,6 @@ class AlexLab:
         pygame.init()
         pygame.display.set_caption(self.title)
         self.ventana:Surface = pygame.display.set_mode((800, 600))
-        
     def run(self):
         running = True
         while running:
@@ -25,7 +24,7 @@ class AlexLab:
             r = random.randint(0, 255);g = random.randint(0, 255);b = random.randint(0, 255)
             self.ventana.fill((0, 0, 0))
             font_inicio = pygame.font.Font(None, 36)
-            texto_inicio = font_inicio.render("Iniciar", True, (0, 0, 0))
+            texto_inicio = font_inicio.render("Iniciar", 0, (0, 0, 0))
             self.ventana.blit(texto_inicio, (100, 100))
             boton_inicio = pygame.Rect(80, 100, 200, 50)
             pygame.draw.rect(self.ventana, (r, g, b), boton_inicio)#colores aleatorios 
