@@ -4,6 +4,9 @@ from pantallas.componentes.boton import Boton
 
 from pantallas.base import PantallaBase
 
+def ejecutar_escena_1():
+    print ("Ejecutando escenario 1")
+
 class StartMenu(PantallaBase):
     def __init__(self):
         self.boton = Boton("Jugar", (100, 100), 200, 50)
@@ -12,10 +15,11 @@ class StartMenu(PantallaBase):
         for evento in eventos:
             if evento.tipo == "click":
                 coordenadas = evento.coordenadas
-                print (f"Click en coordenadas: {coordenadas}")
+                presiono_boton = self.boton.detectar_clic(coordenadas)
+                if presiono_boton:
+                    self.boton.al_presionar(funcion=ejecutar_escena_1)
 
     def rellenar_pantalla(self, ventana:Surface):
-        print ("Rellenando pantalla")
         ventana.fill((100, 250, 100))
 
     def run(self,ventana:Surface):
