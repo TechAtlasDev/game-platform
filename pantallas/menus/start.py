@@ -4,11 +4,8 @@ from pantallas.componentes.boton import Boton
 
 from pantallas.base import PantallaBase
 
-from pantallas.escenario import Escena1
-
 def ejecutar_escena_1():
-    escena = Escena1()
-    escena.run()    
+    print ("Ejecutando escena 1...")
 
 class StartMenu(PantallaBase):
     def __init__(self):
