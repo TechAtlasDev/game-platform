@@ -1,20 +1,27 @@
 from pygame.surface import Surface
 from utils.evento import Evento
+from pantallas.componentes.boton import Boton
 
-class StartMenu:
+from pantallas.base import PantallaBase
+
+def ejecutar_escena_1():
+    print ("Ejecutando escenario 1")
+
+class StartMenu(PantallaBase):
     def __init__(self):
-        pass
+        self.boton = Boton("Jugar", (100, 100), 200, 50)
         
     def manejar_eventos(self, eventos:list[Evento]):
         for evento in eventos:
             if evento.tipo == "click":
                 coordenadas = evento.coordenadas
-                print (f"Click en coordenadas: {coordenadas}")
+                presiono_boton = self.boton.detectar_clic(coordenadas)
+                if presiono_boton:
+                    self.boton.al_presionar(funcion=ejecutar_escena_1)
 
     def rellenar_pantalla(self, ventana:Surface):
-        ventana.fill((100, 255, 100))
+        ventana.fill((100, 250, 100))
 
     def run(self,ventana:Surface):
         self.rellenar_pantalla(ventana)
-
-
+        self.boton.renderizar(ventana)
