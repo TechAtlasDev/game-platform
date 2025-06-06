@@ -34,7 +34,6 @@ while True:
                 x_speed = 0
 #color de la pantalla
     screen.fill(rojo)
-    cord_x += speed_x
 #dubujo    
     pygame.draw.rect (screen,negro,(cord_x,cord_y,80,80))
     pygame.display.flip()
