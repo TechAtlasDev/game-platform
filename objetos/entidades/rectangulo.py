@@ -2,10 +2,7 @@ import pygame
 from entidad import Entidad
 
 class Rectangulo(Entidad):
-  def __init__(self, coordenadas, ancho=50, alto=50, color=(255, 0, 0), velocidad=1, vida=3):
-   # Llamamos al constructor de la clase padre
-    super().__init__(coordenadas, velocidad, vida)
-    
+  def __init__(self, coordenadas, ancho=50, alto=50, color=(255, 0, 0), velocidad=1, vida=3):    
     # Atributos específicos del rectángulo
     self.ancho = ancho
     self.alto = alto
