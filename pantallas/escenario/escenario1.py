@@ -6,12 +6,10 @@ from ..base import PantallaBase
 
 class PantallaJuego(PantallaBase):
   def __init__(self):
-    pass
-
+    self.imagen=pygame.image.load("fondo.png").convert()
 
   def manejar_eventos(self, eventos):
     return super().manejar_eventos(eventos)
   
   def run(self, pantalla:Surface):
-    imagen = pygame.image.load("ruta de la imagen")
-    pantalla.blit(imagen)
+    pantalla.blit(self.imagen,[0,0])
