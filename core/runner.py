@@ -2,7 +2,7 @@ from core.game import Game
 from utils.config import config
 
 #from pantallas.menus.start import StartMenu
-from pantallas.escenario.main import PantallaJuego
+from pantallas.escenario.escenario1 import PantallaJuego
 
 game = Game(title="Mario broster", config=config)
 pantalla_inicial = PantallaJuego()
