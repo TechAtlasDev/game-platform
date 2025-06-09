@@ -2,12 +2,16 @@ from utils.evento import Evento
 from pygame.surface import Surface
 from ..base import PantallaBase
 
+
 class PantallaJuego(PantallaBase):
   def __init__(self):
-    super().__init__()
+    pass
+
 
   def manejar_eventos(self, eventos):
     return super().manejar_eventos(eventos)
   
   def run(self, pantalla):
-    return super().run(pantalla)
+    self.ventana=pantalla
+    self.rellenar_pantalla((0,204,214))
+  

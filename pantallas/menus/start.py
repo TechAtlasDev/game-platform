@@ -8,7 +8,7 @@ def ejecutar_escena_1():
 
 class StartMenu:
     def __init__(self):
-        self.rellenar_pantalla((100,100,100))
+        self.rellenar_pantalla((100,100,200))
         self.boton = Boton("Jugar", (100, 100), 200, 50)
         
     def manejar_eventos(self, eventos:list[Evento]):
