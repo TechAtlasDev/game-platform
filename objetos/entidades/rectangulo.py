@@ -1,11 +1,15 @@
 import pygame
-from entidad import Entidad
+from .entidad import Entidad
 
 class Rectangulo(Entidad):
   def __init__(self, coordenadas, ancho=50, alto=50, color=(255, 0, 0), velocidad=1, vida=3):    
     # Atributos específicos del rectángulo
+    self.coordenadas = coordenadas
+    self.velocidad = velocidad
+    self.vida = vida
     self.ancho = ancho
     self.alto = alto
+    self.activo = True
     self.color = color
     print(f"Rectángulo creado con dimensiones {ancho}x{alto} y color {color}")
   

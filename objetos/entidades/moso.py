@@ -1,9 +1,13 @@
 import pygame
-from entidad import Entidad
+from .entidad import Entidad
 
 class Mozo(Entidad):
     def __init__(self, coordenadas, ancho=40, alto=80, velocidad=2, vida=5):
+        self.coordenadas = coordenadas
+        self.activo = True
         self.ancho = ancho
+        self.velocidad = velocidad
+        self.vida = vida
         self.alto = alto
         self.color = (0, 0, 255)  # Color azul para el mozo
         self.items_llevados = []  # Lista de ítems que lleva el mozo
