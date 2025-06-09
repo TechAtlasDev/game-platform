@@ -2,11 +2,6 @@ class Entidad:
   def __init__(self, coordenadas, velocidad=1, vida=3):
     """
     Inicializa una entidad con coordenadas, velocidad y vida.
-    
-    Args:
-      coordenadas (list): Posición inicial [x, y]
-      velocidad (int): Velocidad de movimiento
-      vida (int): Puntos de vida iniciales
     """
     self.coordenadas = coordenadas
     self.velocidad = velocidad
@@ -37,9 +32,6 @@ class Entidad:
   def dañar(self, unidades):
     """
     Reduce la vida de la entidad según las unidades de daño.
-    
-    Args:
-      unidades (int): Cantidad de daño a aplicar
     """
     self.vida -= unidades
     print(f"Dañado por {unidades} unidades. Vida restante: {self.vida}")
@@ -50,9 +42,6 @@ class Entidad:
   def curar(self, unidades):
     """
     Aumenta la vida de la entidad según las unidades de curación.
-    
-    Args:
-      unidades (int): Cantidad de curación a aplicar
     """
     self.vida += unidades
     print(f"Curado por {unidades} unidades. Vida actual: {self.vida}")
@@ -60,9 +49,6 @@ class Entidad:
   def cambiar_velocidad(self, nueva_velocidad):
     """
     Cambia la velocidad de la entidad.
-    
-    Args:
-      nueva_velocidad (int): Nueva velocidad
     """
     self.velocidad = nueva_velocidad
     print(f"Velocidad actualizada a: {self.velocidad}")
