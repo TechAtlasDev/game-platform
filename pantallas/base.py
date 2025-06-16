@@ -1,31 +1,41 @@
 from pygame.surface import Surface
+from core.ventana import Ventana
 from utils.evento import Evento
 
 class PantallaBase:
   def __init__(self):
-    pass
+    self.ventana:Ventana
+    self.componentes = []
+    self.color = (100, 100, 100)
 
   def manejar_eventos(self, eventos:list[Evento]):
     """
-    Maneja los eventos de entrada del usuario.
-    :param eventos: Lista de eventos de pygame.
+    Maneja los eventos recibidos.
+    Este método debe ser implementado por las subclases.
     """
-    for evento in eventos:
-      if evento.tipo == "click":
-        if evento == "w":
-          print ("Se presionó W")
-
-  def run(self, pantalla:Surface):
+    raise NotImplementedError("Este método debe ser implementado por las subclases.")    
+  
+  def rellenar_pantalla(self, color=None):
+    """
+    Rellena la pantalla con un color específico.
+    :param color: Color a usar para rellenar. Si es None, se usa self.color.
+    """
+    if color:
+      self.ventana.fill(color)
+    else:
+      self.ventana.fill(self.color)
+  
+  def run(self):
     """
     Ejecuta la lógica de la pantalla.
-    :param pantalla: Superficie de pygame donde se renderiza la pantalla.
+    Este método debe ser implementado por las subclases.
     """
-    self.ventana = pantalla
-    self.rellenar_pantalla((100, 100, 100))
-
-  def rellenar_pantalla(self,color):
-      self.ventana.fill(color)
-
+    raise NotImplementedError("Este método debe ser implementado por las subclases.")
+  
   def vaciar_pantalla(self):
-      self.rellenar_pantalla((0,0,0))
-
+    """
+    Limpia la pantalla.
+    Este método puede ser llamado por las subclases para vaciar la pantalla.
+    """
+    self.color = (0, 0, 0)
+    self.rellenar_pantalla()

@@ -1,11 +1,10 @@
 from core.game import Game
 from utils.config import config
 
-#from pantallas.menus.start import StartMenu
-from pantallas.escenario.escenario1 import PantallaJuego
+from pantallas.menus.start import StartMenu
 
-game = Game(title="Mario broster", config=config)
-pantalla_inicial = PantallaJuego()
+pantalla_inicial = StartMenu()
+game = Game(title="Mario broster", config=config, pantalla=pantalla_inicial)
 
 def run_game():
-  game.run(pantalla_inicial)
+  game.run()

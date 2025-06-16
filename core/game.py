@@ -1,3 +1,4 @@
+from core.ventana import Ventana
 from pantallas.menus.start import StartMenu
 import pygame
 from pygame.surface import Surface
@@ -5,16 +6,20 @@ from utils.config import Config
 from .loop import Loop
 
 class Game:
-  def __init__(self, title:str, config:Config):
+  def __init__(self, title:str, config:Config, pantalla:StartMenu):
+    self.pantalla = pantalla
     self.title = title
     self.config = config
     self.loop = Loop()
-    self.ventana:Surface = pygame.display.set_mode((config.width, config.height))
-    pygame.font.init() # Inicializar las fuentes
+    ventana_pygame:Surface = pygame.display.set_mode((config.width, config.height))
+    ventana = Ventana(ventana_pygame)
 
-  def run(self, pantalla:StartMenu):
+    self.pantalla.ventana = ventana
+
+  def run(self):
     while self.loop.running:
       eventos = self.loop.enlistar_eventos()
-      pantalla.manejar_eventos(eventos)
-      pantalla.run(self.ventana)
+      self.pantalla.manejar_eventos(eventos)
+      self.pantalla.run()
       pygame.display.update()
+      pygame.time.Clock().tick(self.config.fps)

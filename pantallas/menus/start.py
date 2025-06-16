@@ -1,29 +1,30 @@
-from pygame.surface import Surface
+# -- Tipado de variables
 from utils.evento import Evento
+
+# -- Importaciones de pantallas y componentes
 from pantallas.componentes.boton import Boton
 from pantallas.base import PantallaBase
 
-def ejecutar_escena_1():
-    print ("Ejecutando escenario 1")
+# Importando el escenario
+from pantallas.escenario.main import PantallaJuego
 
-class StartMenu:
+class StartMenu(PantallaBase):
     def __init__(self):
-        self.rellenar_pantalla((100,100,200))
-        self.boton = Boton("Jugar", (100, 100), 200, 50)
+        super().__init__()
+        self.color = (100, 100, 200)
+        boton = Boton(texto="Jugar", posicion=(100, 100), ancho=200, alto=50)
+        self.ventana.add_component(boton)
+        boton.al_presionar(
+            PantallaJuego, parametros=self.ventana
+        )
         
     def manejar_eventos(self, eventos:list[Evento]):
         for evento in eventos:
             if evento.tipo == "click":
                 coordenadas = evento.coordenadas
-                presiono_boton = self.boton.detectar_clic(coordenadas)
-                if presiono_boton:
-                    self.boton.al_presionar(self.vaciar_pantalla)
 
-    def rellenar_pantalla(self,color):
-        self.ventana.fill(color)
+    def run(self):
+        self.rellenar_pantalla()
 
-    def run(self,ventana:Surface):
-        self.ventana=ventana
-        self.boton.renderizar(ventana)
-    def vaciar_pantalla(self):
-        self.rellenar_pantalla((0,0,0))
+        for componente in self.componentes:
+            componente.renderizar(self.ventana)
