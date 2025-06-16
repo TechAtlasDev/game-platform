@@ -10,7 +10,7 @@ class Heroe(Entidad):
     self.velocidad = velocidad
     self.vida = vida
     self.ancho = ancho
-    self.player=pygame.image.load("mario_brasas1.png").convert()
+    self.player=pygame.image.load("mariobrasas1zure.png").convert()
     self.alto = alto
     self.activo = True
     self.color = color
@@ -20,7 +20,7 @@ class Heroe(Entidad):
   #Renderiza el rectángulo en una pantalla de pygame.  
     if self.esta_vivo():
       # Crear un objeto Rectangulo de pygame
-
+      self.player.set_colorkey((0,0,255))
       
       # Dibujar el rectángulo en la pantalla
       pantalla.blit(self.player,[20,100])

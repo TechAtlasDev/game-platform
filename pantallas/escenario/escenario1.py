@@ -28,5 +28,5 @@ class PantallaJuego(PantallaBase):
   def run(self, pantalla:Surface):
     pantalla.blit(self.imagen,[0,0])
     self.heroe.renderizar(pantalla)
-    self.mozo1.mover_izquierda()
-    self.mozo1.renderizar(pantalla)
+    self.heroe.mover_izquierda()
+    #self.mozo1.renderizar(pantalla)
