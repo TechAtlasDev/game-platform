@@ -23,5 +23,5 @@ class Boton:
   def detectar_clic(self, mouse_posicion) -> bool:
     return self.rectangulo.collidepoint(mouse_posicion)
     
-  def al_presionar(self, funcion):
-    funcion()
+  def al_presionar(self, funcion, parametros):
+    funcion(parametros)
